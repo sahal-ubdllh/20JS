@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hi</h1>
+
+    <script>
+        // Menentukan bilangan genap atau ganjil
+        let a = 10
+
+        if (a % 2 == 0) {
+            console.log("genap")
+        } else {
+            console.log("ganjil");
+        }
+
+        // menghitung total nilai
+        let x = 10
+        let y = 50
+        let z = 80
+        const total = x + y + z
+        console.log(total + 20)
+        
+        // total += 30
+        // console.log(total) 
+        // error karena const tidak bisa diubah nilainya kecuali langsung di console.log tidak bisa diubah dibaris berikutnya
+
+        // Menghitung total harga barang
+        let hargaBarang = 7500
+        let jumlahBarang = 4
+        let totalHarga = hargaBarang * jumlahBarang
+        console.log("Total harga: ", totalHarga)
+
+        // Diskon
+        if(totalHarga > 20000) {
+            let diskon = totalHarga * 0.15
+            console.log("Anda mendapatkan diskon 15%: ", diskon)
+            let hargaSetelahDiskon = totalHarga - diskon
+            console.log("Harga setelah diskon: ", hargaSetelahDiskon)
+        } else {
+            console.log("Maaf anda tidak mendapatkan diskon");
+            console.log("Harga yang perlu anda bayar adalah ", totalHarga);
+        }
+
+
+        // Login sederhana
+        // let username = "admin"
+        // let password = "12345"
+
+        // let inputUsername = prompt("Masukkan Username: ")
+        // let inputPassword = prompt("Masukkan Password: ")
+        // if (inputUsername === username && inputPassword === password) {
+        //     console.log("Login berhasil! Selamat datang, ", inputUsername)
+        // } else {
+        //     console.log("Login gagal! Username atau password salah.")
+        // }
+
+        // Cek kelulusan nilai
+        let nilaiUjian = 70
+        if (nilaiUjian >= 75) {
+            console.log("Selamat, Anda lulus!")
+        }else {
+            console.log("Maaf, anda tidak lulus.")
+        }
+
+        // Cek angka
+        let angka = 2
+        if (angka > 0) {
+            console.log("Positif")
+        }else if (angka < 0) {
+            console.log("Negatif")
+        }else {
+            console.log("Nol");
+        }
+
+        // Hitung rata rata
+        let nilai1 = 20
+        let nilai2 = 30
+        let nilai3 = 50
+        let rataRata = (parseInt(nilai1) +parseInt(nilai2) + parseInt(nilai3)) / 3
+        console.log("Nilai rata rata: ", parseInt(rataRata));
+        
+
+        for(i=1; i<=5; i++) {
+            console.log('*'.repeat(i));
+        }
+
+        // ARRAY
+        const nilai = [80, 70, 75, 45, 20, 90]
+        let sum = 0
+        for (let i = 0; i < nilai.length; i++) {
+            sum += nilai[i]
+        }
+        let avg = parseInt(sum / nilai.length)
+        console.log("Jumlah Nilai: ", sum)
+        console.log("Rata rata: ", avg);
+        
+        const students = ["Andi", "Budi", "Dewi", "Maria"]
+
+        students.push("Diah") //menambah diakhir array
+        students.unshift("santi") //menambah di awal array
+        students.pop() //menghapus diakhir array
+        students.shift() // menghapus diawal array
+
+        students[1] = "Dika" //mengubah data array berdasarkan index
+        for (let i = 0; i < students.length; i++) {
+            console.log(students[i]);
+        }
+
+        //mencari nilai tertinggi
+        const scores = [65, 55, 80, 90, 45, 70]
+        let highest = scores[0]
+        for (let i = 1; i < scores.length; i++) {
+            if (scores[i] > highest) {
+                highest = scores[i]
+
+            }
+        }
+        console.log("Nilai tertinggi adalah: ", highest)
+
+        let lowest = scores[0]
+        for (let i = 1; i < scores.length; i++) {
+            if (scores[i] < lowest) {
+                lowest = scores[i]
+            }
+        }
+        console.log("Nilai terendah adalah: ", lowest)
+
+        // Hitung total ada berapa bilangan genap dalam array
+        const numbers = [ 7, 5, 12, 10, 8, 1, 3, 4, 8, 18, 20, 6, 11, 21, 7]
+        let countEven = 0
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 == 0) {
+                countEven++
+            }
+        }
+        console.log("Jumlah bilangan genap dalam array: ", countEven)
+
+        // mencari nilai dalam array
+        const hewan = ["Kucing", "Anjing", "Burung", "Ikan", "Kelinci"]
+        let targetHewan = "Ayam"
+        let found = false
+        for (let i = 0; i < hewan.length; i++) {
+            if (hewan[i] === targetHewan) {
+                found = true
+                console.log(targetHewan, "Ditemukan pada index ke-", i)
+            }
+        }
+        if (!found) {
+            console.log(targetHewan, "Tidak ditemukan dalam array") // tidak bisa dimasukkan kedalam blok for karena akan terus diulang ulang tidak bisa menggunakan else 
+        }
+
+
+        // menghitung faktorial
+        let num = 5
+        let factorial = 1
+        for (let i = 1; i <= num; i++) {
+            factorial *= i
+        }
+        console.log("Faktorial dari ", num, " adalah ", factorial)
+
+    </script>
+</body>
+</html>
