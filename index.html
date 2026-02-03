@@ -163,6 +163,99 @@
         }
         console.log("Faktorial dari ", num, " adalah ", factorial)
 
+
+        // Filter nilai lulus
+        const nilaiSiswa = [70, 65, 80, 78, 99, 45, 60, 74, 33, 88, 76]
+        const nilaiLulus = []
+
+        for (let i = 0; i < nilaiSiswa.length; i++) {
+            if (nilaiSiswa[i] >= 75) {
+                nilaiLulus.push(nilaiSiswa[i])
+            }
+            // Urut nilai dari yang terbesar
+            nilaiLulus.sort(function(a, b) {
+                return b - a
+            })
+        }
+        console.log("Nilai yang lulus; ", nilaiLulus)
+
+        // Cara kedua menggunakan filter dan sort
+        const nilaiLulus2 = nilaiSiswa.filter(nilai => nilai >= 75).sort((a, b) => b - a)
+        console.log("Nilai yang lulus 2: ", nilaiLulus2)
+
+
+        // nilai rata rata
+        let tambah = 0
+        for (let i = 0; i < nilaiSiswa.length; i++) {
+            tambah += nilaiSiswa[i]
+        }
+        let rataRataNilaiSiswa = parseInt(tambah / nilaiSiswa.length)
+        console.log("Jumlah nilai siswa: ", tambah)
+        console.log("Jumlah siswa: ", nilaiSiswa.length);
+        
+        console.log("Rata rata nilai siswa: ", rataRataNilaiSiswa)
+
+
+        // mencari nilai tertinggi dan terendah
+        let nilaiTertinggi = nilaiSiswa[0]
+        let nilaiTerendah = nilaiSiswa[0]
+
+        for (let i = 1; i < nilaiSiswa.length; i++) {
+            if (nilaiSiswa[i] > nilaiTertinggi) {
+                nilaiTertinggi = nilaiSiswa[i]
+            } else if (nilaiSiswa[i] < nilaiTerendah) {
+                nilaiTerendah = nilaiSiswa[i]
+            }
+        }
+        console.log("Nilai tertinggi : ", nilaiTertinggi);
+        console.log("Nilai terendah : ", nilaiTerendah);
+
+        // hitung nilai yang lebih dari rata rata
+        let countAboveAverage = 0
+        for (let i = 0; i < nilaiSiswa.length; i++) {
+            if (nilaiSiswa[i] > rataRataNilaiSiswa) {
+                countAboveAverage++
+            }
+        }
+        console.log("Jumlah siswa dengan nilai diatas rata rata: ", countAboveAverage)
+
+        // sistem nilai lulus atau tidak lulus
+        for (let i=0; i < nilaiSiswa.length; i++) {
+            if (nilaiSiswa[i] >= rataRataNilaiSiswa) {
+                console.log("Nilai ", nilaiSiswa[i], " : Lulus")
+            }else {
+                console.log("Nilai ", nilaiSiswa[i], " : Tidak Lulus")
+            }
+        }
+
+
+        // Simulasi sistem login
+        // const users = [
+        //     {
+        //         username: "admin",
+        //         password: "12345"
+        //     },
+        //     {
+        //         username: "user1",
+        //         password: "password1"
+        //     }
+        // ]
+        // let inputUser = prompt("Masukkan username: ")
+        // let inputPass = prompt("Masukkan password: ")
+        // let isAuthenticated = false
+        // for ( let i = 0; i < users.length; i++) {
+        //     if (inputUser === users[i].username && inputPass === users[i].password) {
+        //         isAuthenticated = true
+        //         console.log("Login berhasil! Selamat datang, ", inputUser)
+        //     }
+        // }
+        // if (!isAuthenticated ) {
+        //     console.log("Login gagal! username atau password salah.")
+        // }
+
+        
+
+        
     </script>
 </body>
 </html>
