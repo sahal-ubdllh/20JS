@@ -253,7 +253,85 @@
         //     console.log("Login gagal! username atau password salah.")
         // }
 
+        // Sistem diskon bertingkat
+        let totalHargaBarang = 70000
+        let diskonBelanja = 0
+        let totalAkhir = 0
+
+        if (totalHargaBarang >= 100000) {
+            diskonBelanja = 0.2
+        } else if (totalHargaBarang >= 50000) {
+            diskonBelanja = 0.1
+        } else {
+            diskonBelanja = 0
+        }
+
+        totalAkhir = totalHargaBarang - (totalHargaBarang * diskonBelanja)
+
+        console.log("Total Belanja: Rp.", totalHargaBarang)
+        console.log("Diskon yang didapatkan: ", diskonBelanja * 100, "%", "(", totalHargaBarang * diskonBelanja, ")")
+        console.log("Total yang harus dibayar: Rp.", totalAkhir)
+
         
+        const dataStok = [
+            {namaBarang : "Pulpen", stok : 2},
+            {namaBarang : "Buku", stok : 0}
+        ]
+
+        let barangDicari = "Buku"
+
+        for (let i = 0; i < dataStok.length; i++) {
+            if(dataStok[i].namaBarang === barangDicari) {
+                if (dataStok[i].namaBarang > 0) {
+                    console.log(barangDicari, ": Stok tersedia")
+                } else {
+                    console.log(barangDicari, ": Stok tidak tersedia")
+                }
+            }
+        }
+
+
+        // Mencari user aktif
+        const user = [
+            {nama: "Adam", status: true},
+            {nama: "Diana", status: true},
+            {nama: "Tian", status: false}
+        ]
+
+        let userAktif = []
+
+        for (let i = 0; i < user.length; i++) {
+            if (user[i].status === true) {
+                userAktif.push(user[i].nama)
+            }
+        }
+
+        console.log("User aktif : ", userAktif)
+
+
+        // simulasi antrian
+        const antrian = ["Andi", "Budi", "Sinta"]
+
+        let dipanggil = antrian.shift()
+
+        console.log("Yang dipanggil pertama: ", dipanggil)
+        console.log("Sisa antrian ", antrian)
+
+
+        const dataBelanja = [20000, 30000, 40000, 10000, 2000]
+        let totalBelanja = 0
+        let diskonHariini = 0
+
+        for (let i = 0; i < dataBelanja.length; i++) {
+            totalBelanja += dataBelanja[i]
+        }
+
+        if (totalBelanja > 100000) {
+            diskonHariini = 0.2
+        }
+        let totalBayar = totalBelanja - (totalBelanja * 0.2)
+        console.log("Total belanja: ", totalBelanja)
+        console.log("Total yang perlu dibayar: ", totalBayar)
 
         
     </script>
