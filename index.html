@@ -333,7 +333,46 @@
         console.log("Total belanja: ", totalBelanja)
         console.log("Total yang perlu dibayar: ", totalBayar)
 
+        let role = 'user'
+        if (role === "admin") {
+            console.log('Akses hak penuh')
+        } else if (role === "user") {
+            console.log("akses terbatas")
+        } else {
+            console.log("akses ditolak")
+        }
+
+
+        let username = "Andi"
+        let email = ''
+        let password = "12345"
         
+        if (username === "" || email === "" || password === "") {
+            console.log("Login Error, Masukkan semua field!")
+        } else {
+            console.log("Login berhasil! Selamat datang ", username)
+        }
+
+
+
+        
+        // hitung total + pajak
+        const belanja = [20000, 30000, 28000]
+        let pajak = 0.1
+        let totalBelanja1 = 0
+
+        for (let i = 0; i < belanja.length; i++) {
+            totalBelanja1 += belanja[i]
+        }
+
+        let totalPajak = totalBelanja1 * pajak
+        let totalBayar1 = totalBelanja1 + totalPajak
+
+        console.log("Total belanja: ", totalBelanja1)
+        console.log("Pajak: ", totalPajak)
+        console.log("Total yang perlu dibayar: ", totalBayar1)
+
+
     </script>
 </body>
 </html>
